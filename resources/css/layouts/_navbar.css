@@ -1,0 +1,170 @@
+@layer components {
+    /* 1. WADAH UTAMA NAVBAR */
+    .navbar-glass {
+        /* Ubah sticky jadi FIXED, atur posisi */
+        @apply fixed top-0 right-0 left-0 z-40 transition-all duration-300;
+        
+        /* AMBIL TINGGI DARI VARIABEL DI _main.css */
+        height: var(--header-height);
+        
+        /* Lebar responsif (dikurangi lebar sidebar di desktop) */
+        @apply md:left-[260px] md:w-[calc(100%-260px)];
+        
+        /* Flexbox */
+        @apply flex items-center justify-between px-6;
+
+        /* EFEK KACA */
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-glass.is-collapsed {
+        /* Geser Start Navbar ke 80px (Ukuran Sidebar Kecil) */
+        @apply md:left-[80px] !important;
+        
+        /* Lebar Navbar memanjang (100% - 80px) */
+        @apply md:w-[calc(100%-80px)] !important;
+    }
+
+    /* 2. TOMBOL HAMBURGER (Menu Toggle) */
+    .navbar-toggle {
+        @apply p-2 rounded-lg text-slate-500 transition-colors cursor-pointer;
+    }
+    .navbar-toggle:hover {
+        @apply bg-slate-100 text-blue-600;
+    }
+
+    /* 3. DROPDOWN PROFIL (Kotak yang muncul saat klik foto) */
+    .profile-dropdown {
+        @apply absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-slate-100 py-1;
+        
+        /* Animasi muncul */
+        @apply origin-top-right transition-all duration-200 scale-95 opacity-0 invisible;
+    }
+
+    /* Saat dropdown aktif (ditambah via JS) */
+    .profile-dropdown.active {
+        @apply scale-100 opacity-100 visible;
+    }
+
+    /* Item di dalam dropdown */
+    .dropdown-item {
+        @apply block px-4 py-2 text-sm text-slate-600 transition-colors;
+    }
+    .dropdown-item:hover {
+        @apply bg-slate-50 text-blue-600;
+    }
+
+    /* TOMBOL LOGOUT (KOTAK MERAH MENYALA) */
+    /* TOMBOL LOGOUT (REVISI: Putih & Tebal) */
+    .btn-logout {
+        @apply flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-300;
+        
+        /* Background Merah Menyala */
+        @apply bg-red-600 border border-red-500 shadow-md;
+    }
+
+    /* Target KHUSUS Ikon di dalamnya */
+    .btn-logout i {
+        /* 1. Paksa Warna Putih */
+        @apply text-white;
+        color: #ffffff !important; 
+
+        /* 2. Ukuran & Ketebalan */
+        font-size: 1.1rem;      /* Sedikit diperbesar biar jelas */
+        font-weight: 900;       /* Font Awesome Solid paling tebal */
+    }
+
+    /* Efek Hover */
+    .btn-logout:hover {
+        @apply bg-red-700 shadow-lg scale-105;
+    }
+
+    /* STYLE KAPSUL PROFIL (PILL) - REVISI MOBILE */
+    .profile-pill {
+        /* 1. DEFAULT (MOBILE/HP): RESET TOTAL */
+        /* Background transparan, tanpa border, tanpa padding kapsul */
+        @apply flex items-center justify-center transition-all duration-300;
+        @apply p-0 bg-transparent border-none shadow-none;
+
+        /* 2. DESKTOP (LAPTOP): AKTIFKAN STYLE KAPSUL */
+        /* Gunakan prefix 'md:' supaya style ini cuma jalan di layar besar */
+        @apply md:gap-3 md:pl-4 md:pr-1 md:py-1;
+        @apply md:bg-white md:rounded-full md:border md:border-slate-200 md:shadow-sm;
+    }
+
+    /* Efek Hover (Hanya aktif di Desktop) */
+    .profile-pill:hover {
+        @apply md:shadow-md md:border-blue-200 md:-translate-y-px;
+    }
+
+    /* 1. CONTAINER DROPDOWN (WADAH UTAMA) */
+    .profile-dropdown {
+        /* Layout */
+        @apply absolute right-0 mt-4 w-64 bg-white rounded-2xl shadow-xl;
+        
+        /* PENTING: Hapus padding dan border parent supaya tidak ada celah */
+        @apply p-0 border border-slate-100;
+        
+        /* Animasi */
+        @apply origin-top-right transition-all duration-200 scale-95 opacity-0 invisible;
+        
+        /* KUNCI: Pastikan isinya tidak bocor keluar sudut bulat */
+        overflow: hidden; 
+    }
+    
+    .profile-dropdown.active {
+        @apply scale-100 opacity-100 visible translate-y-2;
+    }
+
+    /* 2. HEADER AURORA (VERSI NO-GAP) */
+    .dropdown-header-aurora {
+        /* Layout Tengah */
+        @apply flex flex-col items-center justify-center pt-5 pb-4 px-4;
+        
+        /* Warna Gradient */
+        background: linear-gradient(135deg, #818cf8, #c084fc, #f472b6);
+        position: relative;
+
+        /* --- SOLUSI CELAH PUTIH --- */
+        /* 1. Paksa lebar penuh */
+        @apply w-full;
+        
+        /* 2. Tarik ke atas & samping 1px untuk menutupi border putih */
+        margin-top: -1px;
+        margin-left: -1px;
+        margin-right: -1px;
+        width: calc(100% + 2px); /* Kompensasi tarikan samping */
+    }
+
+    /* Foto Profile (Slim) */
+    .dropdown-avatar-lg {
+        @apply w-14 h-14 rounded-full flex items-center justify-center text-xl font-bold;
+        @apply bg-white text-indigo-600 shadow-md;
+        border: 3px solid rgba(255, 255, 255, 0.4);
+        background-clip: padding-box;
+    }
+
+    /* 3. MENU BODY */
+    .dropdown-body {
+        @apply p-2 bg-white relative z-10; /* Z-index biar di atas bocoran margin */
+    }
+
+    /* Item Menu */
+    .dropdown-item-aesthetic {
+        @apply flex items-center px-4 py-3 rounded-xl text-sm font-medium text-slate-600 transition-all duration-200;
+        margin-bottom: 2px;
+    }
+    .dropdown-item-aesthetic:hover {
+        @apply bg-indigo-50 text-indigo-600 pl-6;
+    }
+    .dropdown-item-aesthetic i {
+        @apply mr-3 text-slate-400 transition-colors;
+    }
+    .dropdown-item-aesthetic:hover i {
+        @apply text-indigo-500;
+    }
+}

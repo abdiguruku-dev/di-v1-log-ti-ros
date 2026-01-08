@@ -1,0 +1,21 @@
+/* =========================================
+   DRAG & DROP ZONE
+   ========================================= */
+.dropzone {
+    border: 2px dashed #cbd5e1;
+    border-radius: var(--border-radius-md);
+    padding: 40px 20px;
+    text-align: center;
+    background: #f8fafc;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.dropzone:hover, .dropzone.dragover {
+    border-color: var(--primary);
+    background: var(--info-bg);
+}
+
+.dropzone-icon { font-size: 3rem; color: var(--text-muted); margin-bottom: 15px; }
+.dropzone-text { font-weight: 600; color: var(--text-main); }
+.dropzone-hint { font-size: 0.85rem; color: var(--text-muted); margin-top: 5px; }

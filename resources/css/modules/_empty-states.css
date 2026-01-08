@@ -1,0 +1,15 @@
+/* =========================================
+   EMPTY STATES (Data Kosong)
+   ========================================= */
+.empty-state {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.empty-img {
+    width: 200px; margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.empty-title { font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 5px; }
+.empty-desc { color: var(--text-muted); max-width: 400px; margin: 0 auto 20px; }

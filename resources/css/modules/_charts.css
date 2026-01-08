@@ -1,0 +1,8 @@
+/* =========================================
+   CHARTS CONTAINER
+   ========================================= */
+.chart-container {
+    position: relative;
+    height: 300px; /* Tinggi default grafik */
+    width: 100%;
+}

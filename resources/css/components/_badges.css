@@ -1,0 +1,18 @@
+/* =========================================
+   BADGES (Label Status)
+   ========================================= */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 50px; /* Pill shape */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-success { background: var(--success-bg); color: var(--success); }
+.badge-danger  { background: var(--danger-bg); color: var(--danger); }
+.badge-warning { background: var(--warning-bg); color: #d97706; }
+.badge-info    { background: var(--info-bg); color: var(--info); }
+.badge-secondary { background: #e2e8f0; color: var(--text-muted); }

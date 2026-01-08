@@ -1,0 +1,16 @@
+:root {
+    /* --- AURORA COLOR PALETTE --- */
+    --color-primary: #3b82f6;      /* Blue 500 */
+    --color-primary-dark: #2563eb; /* Blue 600 */
+    --color-secondary: #6366f1;    /* Indigo 500 */
+    
+    /* --- GLASS EFFECT SETTINGS --- */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    --glass-blur: 10px;
+
+    /* --- SIDEBAR SETTINGS --- */
+    --sidebar-width: 260px;
+    --header-height: 70px;
+}

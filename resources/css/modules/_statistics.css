@@ -1,0 +1,20 @@
+/* =========================================
+   STATISTICS & BIG NUMBERS
+   ========================================= */
+.stat-value-big {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1;
+    margin: 10px 0;
+}
+
+/* Indikator Naik/Turun */
+.trend-indicator {
+    font-size: 0.85rem; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 4px;
+}
+.trend-up { color: var(--success); }
+.trend-down { color: var(--danger); }
+
+.stat-label { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; color: var(--text-muted); }

@@ -1,0 +1,31 @@
+_avatars/* =========================================
+   AVATARS (Foto Profil)
+   ========================================= */
+
+/* Avatar Dasar */
+.user-avatar, .header-avatar {
+    background: var(--grad-avatar);
+    color: #fff;
+    border-radius: var(--border-radius-full);
+    display: flex; justify-content: center; align-items: center;
+    font-weight: 700;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    z-index: var(--z-normal);
+}
+
+/* Ukuran Kecil (Navbar/Table) */
+.user-avatar {
+    width: 42px; height: 42px;
+    font-size: 1.1rem;
+    border: 2px solid #fff;
+}
+
+/* Ukuran Besar (Header Dropdown) */
+.header-avatar {
+    width: 65px; height: 65px; 
+    margin: 0 auto 12px; 
+    background: #fff; color: var(--primary); /* Kebalikan warna */
+    font-size: 1.6rem; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+}

@@ -1,0 +1,195 @@
+@layer components {
+
+   /* =========================================
+       1. BAGIAN LOGO HEADER (STICKY)
+       ========================================= */
+    
+    .sidebar-header {
+        /* --- PERUBAHAN UTAMA DISINI --- */
+        /* Kita hapus 'h-20' dan pakai variabel biar sama persis dgn Navbar */
+        height: var(--header-height); 
+        
+        /* Sisa styling lainnya tetap sama */
+        @apply flex items-center px-8 shrink-0 relative z-20;
+        
+        /* Background & Border */
+        @apply bg-indigo-800/90 backdrop-blur-md; 
+        @apply border-b border-slate-200/80 shadow-sm;
+    }
+
+    /* ICON LOGO */
+    .logo-icon {
+        @apply text-yellow-400 text-3xl mr-3 flex justify-center; 
+    }
+
+    /* CONTAINER TEXT (Pembungkus Judul) */
+    .logo-text-container {
+        @apply flex flex-col;
+    }
+
+    /* JUDUL UTAMA */
+    .app-title {
+        @apply text-xl font-bold text-white tracking-wide leading-tight;
+        white-space: nowrap;
+    }
+
+    /* SUB-JUDUL */
+    .app-subtitle {
+        @apply text-[10px] text-neutral-100 font-semibold tracking-wider capitalize;
+        white-space: nowrap;
+    }
+
+
+    /* =========================================
+       2. CONTAINER UTAMA SIDEBAR
+       ========================================= */
+    
+    .sidebar-glass {
+        @apply fixed top-0 left-0 z-50 h-screen transition-all duration-300 ease-in-out border-r;
+        @apply transition-all duration-300 ease-in-out;
+        
+        width: var(--sidebar-width);
+        
+        /* Background Kaca Utama */
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(var(--glass-blur));
+        border-color: var(--glass-border);
+        
+        /* LAYOUT FLEX (KUNCI AGAR HEADER DIAM) */
+        @apply flex flex-col; 
+        
+        /* PENTING: Matikan scroll di container utama */
+        overflow: hidden !important; 
+    }
+
+
+    /* =========================================
+       3. AREA MENU (SCROLLABLE AREA)
+       ========================================= */
+    
+    .sidebar-scroll-area {
+        @apply flex-1 overflow-y-auto p-3 pb-20;
+        scroll-behavior: smooth;
+    }
+    
+    /* Custom Scrollbar (Khusus Area Ini) */
+    .sidebar-scroll-area::-webkit-scrollbar {
+        width: 5px;
+    }
+    .sidebar-scroll-area::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .sidebar-scroll-area::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+    }
+    .sidebar-scroll-area::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+
+
+    /* =========================================
+       4. MENU LINK STYLING
+       ========================================= */
+    
+    /* Tombol Menu Dasar */
+    .nav-link {
+        @apply flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 text-slate-600 mb-1;
+    }
+
+    /* Hover effect (jika tidak aktif) */
+    .nav-link:not(.active):hover {
+        @apply bg-blue-50 text-blue-600 pl-8 translate-x-1; 
+    }
+
+    /* MENU AKTIF (Sedang dibuka) */
+    .nav-link.active {
+        @apply text-white font-bold shadow-md;
+        
+        /* Background Gradient Aurora */
+        background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+        background-size: 200% 200%;
+        
+        /* Animasi */
+        animation: auroraItem 3s ease infinite;
+        
+        /* Bentuk Unik */
+        border-radius: 0 25px 25px 0; 
+        margin-right: 10px; 
+    }
+    
+    .nav-link.active i {
+        @apply text-white; 
+    }
+
+
+    /* =========================================
+       5. LOGIC MOBILE (HP)
+       ========================================= */
+    
+    @media (max-width: 768px) {
+        .sidebar-glass {
+            transform: translateX(-100%); 
+            width: 260px !important; 
+        }
+
+        .sidebar-glass.show-mobile {
+            transform: translateX(0); 
+        }
+        
+        .main-wrapper {
+            margin-left: 0 !important;
+        }
+    }
+
+
+    /* =========================================
+       6. MODE MINI (COLLAPSED / SIDEBAR KECIL)
+       ========================================= */
+    
+    .sidebar-glass.is-collapsed {
+        width: 80px !important; 
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Sembunyikan Elemen Teks */
+    .sidebar-glass.is-collapsed .sidebar-section-label,
+    .sidebar-glass.is-collapsed .nav-text,
+    .sidebar-glass.is-collapsed .logo-text-container {
+        display: none !important; 
+    }
+
+    /* Logo Icon ke Tengah */
+    .sidebar-glass.is-collapsed .logo-icon {
+        margin: 0 auto !important;
+        justify-content: center !important;
+        width: 100%;
+    }
+
+    /* Tombol Menu Jadi Kotak */
+    .sidebar-glass.is-collapsed .nav-link {
+        justify-content: center !important;
+        padding: 0 !important;
+        width: 50px !important;
+        height: 50px !important;
+        margin: 0 auto 8px auto !important;
+        border-radius: 12px !important;
+    }
+
+    /* Icon Menu */
+    .sidebar-glass.is-collapsed .nav-link i {
+        margin: 0 !important;
+        font-size: 1.25rem !important;
+    }
+
+    /* Menu Aktif saat Collapsed */
+    .sidebar-glass.is-collapsed .nav-link.active {
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 12px !important; 
+        margin-right: auto !important;
+        background-size: 200% 200%;
+    }
+
+} /* <--- KURUNG TUTUP UTAMA (Disini tempat yang benar Bos!) */

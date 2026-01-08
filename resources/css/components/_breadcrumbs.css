@@ -1,0 +1,21 @@
+/* =========================================
+   BREADCRUMBS
+   ========================================= */
+.breadcrumb {
+    display: flex; align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.breadcrumb-item { display: flex; align-items: center; }
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/"; /* Separator */
+    margin: 0 8px;
+    color: #cbd5e1;
+}
+
+.breadcrumb-item a { color: var(--text-muted); transition: 0.2s; }
+.breadcrumb-item a:hover { color: var(--primary); text-decoration: underline; }
+.breadcrumb-item.active { color: var(--primary); font-weight: 600; }

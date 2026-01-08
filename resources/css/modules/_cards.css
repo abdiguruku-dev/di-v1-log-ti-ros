@@ -1,0 +1,17 @@
+@layer components {
+    .card-glass {
+        /* 1. Base Layout */
+        @apply relative overflow-hidden rounded-2xl border transition-all duration-300;
+
+        /* 2. STYLE BARU: SOLID (TIDAK BURAM) */
+        /* Pakai bg-white (putih 100%) dan border abu tipis */
+        @apply bg-white border-slate-200 shadow-sm;
+        
+        /* Hapus baris backdrop-filter yang bikin buram */
+    }
+    
+    /* 3. Efek Hover */
+    .card-glass:hover {
+        @apply -translate-y-1 shadow-md border-blue-200;
+    }
+}

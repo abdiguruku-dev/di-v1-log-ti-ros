@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow: hidden;
+    /* BACKGROUND AURORA */
+    background: linear-gradient(-45deg, #0a1a2d, #1a5f7a, #ec4899, #f97316, #fbbf24, #a5f3fc, #2dd4bf, #0a1a2d);
+    background-size: 600% 600%;
+    animation: aurora 25s ease infinite;
+}
+@keyframes aurora {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.85); /* Putih Susu */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    padding: 2.5rem 3rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 380px;
+    color: #0a1a2d; /* Teks Gelap */
+}
+
+/* LOGO & TEXT */
+.logo-container { text-align: center; margin-bottom: 0.5rem; }
+.logo-container img { width: 70px; height: auto; }
+.brand-logo {
+    text-align: center; margin-bottom: 2rem; font-size: 1.5rem; font-weight: 800; letter-spacing: 0.5px;
+    color: #0a1a2d;
+}
+.form-group { margin-bottom: 1.2rem; }
+.form-label { display: block; margin-bottom: 0.5rem; color: #0a1a2d; font-size: 0.9rem; font-weight: 700; }
+
+/* INPUT FIELD */
+.input-icon-wrapper { position: relative; display: flex; align-items: center; }
+.input-icon { position: absolute; left: 15px; color: #ec4899; z-index: 10; } /* Icon Pink */
+.form-input {
+    width: 100%; padding: 0.9rem 1rem 0.9rem 1rem;
+    background: #ffffff; border: 2px solid #e2e8f0; border-radius: 12px;
+    color: #0a1a2d; font-size: 1rem; font-weight: 500; box-sizing: border-box; transition: all 0.2s ease;
+}
+.form-input.with-icon { padding-left: 45px; }
+.form-input:focus {
+    outline: none; border-color: #f97316; /* Border Jingga saat fokus */
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+}
+.form-input::placeholder { color: #94a3b8; font-weight: 400; }
+
+/* MATA & CHECKBOX */
+.toggle-password { position: absolute; right: 15px; cursor: pointer; color: #64748b; }
+.toggle-password:hover { color: #f97316; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; margin-bottom: 1.5rem; }
+.checkbox-wrapper { display: flex; align-items: center; color: #0a1a2d; font-weight: 600; }
+.checkbox-wrapper input { margin-right: 8px; accent-color: #ec4899; width: 16px; height: 16px; cursor: pointer; }
+.forgot-link { color: #ec4899; text-decoration: none; font-weight: 600; }
+.forgot-link:hover { color: #f97316; text-decoration: underline; }
+
+/* TOMBOL UTAMA (KEMBALI KE GRADIENT) */
+.btn-primary {
+    width: 100%;
+    /* Gradient Pink ke Jingga */
+    background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+    color: white; padding: 1rem; border: none; border-radius: 12px;
+    font-weight: 700; cursor: pointer; font-size: 1rem; transition: all 0.2s;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.5);
+}
+
+/* ALTERNATIF LOGIN ICONS */
+.alt-login-text { text-align: center; font-size: 0.8rem; color: #64748b; margin-top: 1.5rem; margin-bottom: 0.8rem; font-weight: 600; }
+.alt-login-icons { display: flex; justify-content: center; gap: 15px; }
+
+.alt-btn {
+    width: 45px; height: 45px; border-radius: 50%; background: white; border: 2px solid #e2e8f0;
+    display: flex; justify-content: center; align-items: center; cursor: pointer;
+    color: #64748b; font-size: 1.2rem; transition: all 0.2s;
+}
+.alt-btn:hover {
+    border-color: #ec4899; color: #ec4899; transform: translateY(-3px);
+}
+/* Tombol Aktif jadi Gradient */
+.alt-btn.active {
+    background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+    color: white; border-color: transparent;
+    box-shadow: 0 4px 10px rgba(236, 72, 153, 0.4);
+}
+
+.footer-text { text-align: center; margin-top: 2rem; font-size: 0.8rem; color: #475569; font-weight: 500; }
+.error-message { background: #fef2f2; border: 1px solid #fee2e2; color: #ef4444; padding: 0.8rem; border-radius: 10px; margin-bottom: 1.5rem; font-size: 0.9rem; text-align: center; font-weight: 600; }
+
+
+
+/* --- HANYA RAMPINGKAN INPUT & TOMBOL --- */
+
+/* 1. Rampingkan Kotak Input (User & Password) */
+.form-input {
+    /* Mengurangi jarak atas-bawah di dalam kotak ketik */
+    padding-top: 0.65rem !important;
+    padding-bottom: 0.65rem !important;
+    font-size: 0.95rem; /* Ukuran huruf sedikit disesuaikan */
+    height: auto; /* Memastikan tinggi mengikuti padding */
+}
+
+/* 2. Rampingkan Tombol "MASUK APLIKASI" */
+.btn-primary {
+    /* Mengurangi tebal tombol */
+    padding-top: 0.7rem !important; 
+    padding-bottom: 0.7rem !important;
+    font-size: 1rem;
+    margin-top: 0.5rem; /* Sedikit jarak dari elemen atasnya */
+}
+
+/* 3. Penyesuaian Posisi Ikon (Agar tetap di tengah vertikal) */
+.input-icon, 
+.toggle-password {
+    font-size: 1rem; /* Ukuran ikon disesuaikan dengan input */
+    top: 50%;
+    transform: translateY(-50%); /* Kunci agar ikon selalu center vertikal */
+}
+
+/* 4. Sedikit merapatkan jarak antar input (Opsional, agar tidak terlalu jauh) */
+.form-group {
+    margin-bottom: 1rem !important;
+}

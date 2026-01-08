@@ -1,0 +1,64 @@
+/* =========================================
+   DROPDOWN MENUS
+   ========================================= */
+
+/* Container Utama Dropdown */
+.profile-dropdown-menu {
+    position: absolute; top: 130%; right: 0; width: 280px;
+    background: var(--text-white); 
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-neon); /* Glow efek */
+    border: 1px solid var(--shadow-sm); 
+    overflow: hidden; 
+    z-index: var(--z-dropdown);
+    
+    /* Animasi Default (Hidden) */
+    opacity: 0; visibility: hidden; 
+    transform: translateY(-10px);
+    transition: all var(--trans-normal) cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Saat Aktif (Show) */
+.profile-dropdown-menu.active { 
+    opacity: 1; visibility: visible; transform: translateY(0); 
+}
+
+/* HEADER CARD (Gradient & Bubbles) */
+.dropdown-header-profile {
+    padding: 25px 20px; 
+    background: var(--grad-primary); /* Biru ke Tosca */
+    text-align: center; position: relative; overflow: hidden; 
+    border-bottom: none; color: var(--text-white);
+}
+
+/* Dekorasi Bola-bola Transparan */
+.dropdown-header-profile::before,
+.dropdown-header-profile::after {
+    content: ""; position: absolute; border-radius: 50%; pointer-events: none;
+    background: rgba(255,255,255,0.1);
+}
+.dropdown-header-profile::before { top: -20px; right: -20px; width: 100px; height: 100px; }
+.dropdown-header-profile::after { bottom: -30px; left: -10px; width: 80px; height: 80px; }
+
+/* Info Text di Header */
+.header-info { position: relative; z-index: var(--z-normal); }
+.header-info h4 { margin: 0; font-size: 1.1rem; color: #fff; font-weight: 800; }
+.header-info p { margin: 2px 0 8px; font-size: 0.85rem; color: rgba(255,255,255,0.9); font-weight: 500; }
+
+/* LIST MENU ITEM */
+.dropdown-list { list-style: none; padding: 10px; margin: 0; background: #fff; }
+
+.dropdown-list li a {
+    display: flex; align-items: center; gap: 12px; padding: 12px 20px;
+    color: var(--text-body); 
+    text-decoration: none; 
+    border-radius: var(--border-radius-md); 
+    transition: 0.2s;
+    font-size: 0.95rem; font-weight: 600;
+}
+
+.dropdown-list li a i { width: 20px; text-align: center; color: var(--text-muted); transition: 0.2s; }
+
+/* Hover Item */
+.dropdown-list li a:hover { background: var(--info-bg); color: var(--primary); }
+.dropdown-list li a:hover i { color: var(--secondary); }

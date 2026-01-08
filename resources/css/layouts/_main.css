@@ -1,0 +1,83 @@
+@layer components {
+
+    /* === 1. DEFINISI VARIABEL === */
+    :root {
+        --header-height: 70px;
+        --sidebar-width: 260px;
+    }
+
+    /* === 2. RESET BODY & HTML (WAJIB UNTUK SCROLL) === */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        /* Biarkan browser menangani scroll secara alami */
+        overflow-x: hidden; 
+        overflow-y: auto; 
+    }
+
+    .body-aurora {
+        @apply w-full font-sans text-gray-600 antialiased;
+        background: linear-gradient(-45deg, #0a1a2d, #1a5f7a, #2dd4bf, #8b5cf6, #fc4141);
+        @apply animate-gradient-slow;
+    }
+
+    /* === 3. WRAPPER UTAMA === */
+    /* Ini adalah pembungkus Navbar, Konten, dan Footer */
+    .main-wrapper {
+        display: flex;
+        flex-direction: column;
+        
+        /* Tinggi MINIMAL setinggi layar, kalau konten panjang dia ikut memanjang */
+        min-height: 100vh; 
+        
+        /* Geser ke kanan selebar sidebar */
+        margin-left: var(--sidebar-width);
+        
+        /* Transisi halus saat sidebar dibuka-tutup */
+        transition: margin-left 0.3s ease-in-out;
+        
+        position: relative;
+    }
+
+    /* === 4. AREA KONTEN === */
+    .content-area {
+        flex: 1; /* Mengisi ruang kosong agar footer terdorong ke bawah */
+        width: 100%;
+        
+        /* PENTING: Padding atas supaya tidak ketutup Navbar */
+        padding-top: calc(var(--header-height) + 20px); 
+        
+        /* Padding Kanan-Kiri-Bawah Konten */
+        @apply px-6 pb-6;
+    }
+
+    /* === 5. LOGIC RESPONSIVE & COLLAPSE === */
+    @media (max-width: 768px) {
+        .main-wrapper {
+            margin-left: 0 !important;
+        }
+    }
+    
+    .main-wrapper.is-collapsed {
+        margin-left: 80px !important; 
+    }
+
+    /* === 6. GARIS HEADER (ABSOLUTE) === */
+    .header-gradient-border {
+        position: fixed; /* Tetap melayang */
+        top: var(--header-height);
+        left: 0; /* Mulai dari ujung kiri layar */
+        width: 100%; /* Lebar full layar */
+        height: 3px;
+        z-index: 999; /* Paling atas */
+        background: linear-gradient(90deg, #6366f1, #ec4899, #8b5cf6, #fa2f2f, #dcf163);
+        background-size: 300% 100%;
+        animation: running-line 3s linear infinite;
+    }
+
+    @keyframes running-line {
+        0% { background-position: 0% 0%; }
+        100% { background-position: 100% 0%; }
+    }
+}

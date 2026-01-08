@@ -1,0 +1,32 @@
+/* =========================================
+   INVOICE / KWITANSI
+   ========================================= */
+.invoice-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
+.invoice-header {
+    display: flex; justify-content: space-between;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 20px; margin-bottom: 30px;
+}
+
+.invoice-title { font-size: 2rem; color: var(--text-muted); font-weight: 300; text-transform: uppercase; }
+
+.invoice-total {
+    text-align: right;
+    background: #f8fafc; padding: 15px;
+    border-radius: var(--border-radius-sm);
+}
+
+.total-amount { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+
+/* Saat diprint, hilangkan shadow box */
+@media print {
+    .invoice-box { border: none; box-shadow: none; padding: 0; }
+}

@@ -1,0 +1,18 @@
+/* =========================================
+   MEDIA OBJECTS
+   ========================================= */
+.media {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.media-img {
+    width: 50px; height: 50px;
+    border-radius: var(--border-radius-sm);
+    object-fit: cover;
+    flex-shrink: 0; /* Agar gambar tidak gepeng */
+}
+
+.media-body { flex: 1; }
+.media-title { font-weight: 700; margin-bottom: 2px; }

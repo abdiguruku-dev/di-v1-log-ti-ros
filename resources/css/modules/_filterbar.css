@@ -1,0 +1,45 @@
+/* =========================================
+   FILTER BAR (Pencarian Kompleks)
+   ========================================= */
+.filterbar {
+    padding: 20px;
+    background: #fff;
+    border-radius: var(--border-radius-md);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    flex: 1;
+}
+
+.filter-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    margin-top: auto; /* Dorong ke bawah biar sejajar input */
+    padding-bottom: 2px;
+}
+
+/* Responsive: Di HP filter jadi tumpuk */
+@media (max-width: 768px) {
+    .filterbar { flex-direction: column; align-items: stretch; }
+    .filter-group { min-width: 100%; }
+    .filter-actions { width: 100%; justify-content: flex-end; margin-top: 10px; }
+}

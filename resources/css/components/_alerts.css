@@ -1,0 +1,37 @@
+/* =========================================
+   ALERTS (Notifikasi)
+   ========================================= */
+.alert {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius-sm);
+    border-left: 4px solid; /* Aksen garis di kiri */
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.95rem;
+    animation: slideDown 0.3s ease;
+}
+
+/* Varian Warna */
+.alert-success {
+    background: var(--success-bg);
+    color: #065f46;
+    border-color: var(--success);
+}
+
+.alert-danger {
+    background: var(--danger-bg);
+    color: #991b1b;
+    border-color: var(--danger);
+}
+
+.alert-warning {
+    background: var(--warning-bg);
+    color: #92400e;
+    border-color: var(--warning);
+}
+
+.alert-info {
+    background: var(--info-bg);
+    color: #1e40af;
+    border-color: var(--info);
+}

@@ -1,0 +1,35 @@
+/* =========================================
+   TIMELINE (History Log)
+   ========================================= */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px solid #e2e8f0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Titik Bulat di Garis */
+.timeline-dot {
+    position: absolute; left: -36px; top: 0;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 0 3px #fff; /* Memberi jarak visual dari garis */
+}
+
+.timeline-content {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid #f1f5f9;
+}
+
+.timeline-time {
+    font-size: 0.8rem; color: var(--text-muted); margin-bottom: 5px; display: block;
+}
+.timeline-title { font-weight: 700; margin-bottom: 5px; color: var(--text-main); }

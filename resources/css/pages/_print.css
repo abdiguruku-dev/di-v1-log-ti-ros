@@ -1,0 +1,26 @@
+/* =========================================
+   PRINT STYLES
+   ========================================= */
+@media print {
+    /* Sembunyikan Elemen Navigasi */
+    #sidebar, .navbar, .btn, .card-footer, .pagination, .no-print {
+        display: none !important;
+    }
+
+    /* Reset Layout untuk Kertas */
+    #content { margin: 0 !important; width: 100% !important; }
+    .main-content { padding: 0 !important; }
+    
+    /* Reset Background & Shadow */
+    body, .card { 
+        background: #fff !important; 
+        box-shadow: none !important; 
+        border: none !important;
+    }
+    
+    /* Pastikan Teks Hitam (Hemat Tinta Warna) */
+    body { color: #000 !important; }
+    
+    /* Page Break (Agar tabel tidak terpotong jelek) */
+    .page-break { page-break-before: always; }
+}

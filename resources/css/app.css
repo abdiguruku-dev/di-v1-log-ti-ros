@@ -1,0 +1,58 @@
+
+/* 1. IMPORT BASE */
+@import './base/_animations.css';
+@import './base/_reset.css';
+@import './base/_scrollbar.css';
+@import './base/_typography.css';
+@import './base/_utilities.css';
+@import './base/_variables.css';
+
+
+/* 2. IMPORT COMPONENTS */
+@import './components/_alerts.css';
+@import './components/_avatars.css';
+@import './components/_badges.css';
+@import './components/_breadcrumbs.css';
+@import './components/_buttons.css';
+@import './components/_dropdowns.css';
+@import './components/_forms.css';
+@import './components/_loaders.css';
+@import './components/_progress.css';
+@import './components/_tooltips.css';
+
+
+/* 3. IMPORT LAYOUTS */
+@import './layouts/_sidebar.css';
+@import './layouts/_navbar.css';
+@import './layouts/_main.css';
+@import './layouts/_footer.css';
+
+/* 4. IMPORT MODULES */
+@import './modules/_accordion.css';
+@import './modules/_calendar.css';
+@import './modules/_cards.css';
+@import './modules/_charts.css';
+@import './modules/_datagrid.css';
+@import './modules/_dragdrop.css';
+@import './modules/_empty-states.css';
+@import './modules/_filterbar.css';
+@import './modules/_kanban.css';
+@import './modules/_media.css';
+@import './modules/_modals.css';
+@import './modules/_statistics.css';
+@import './modules/_tables.css';
+@import './modules/_tabs.css';
+@import './modules/_timeline.css';
+@import './modules/_wizard.css';
+
+/* 5. IMPORT PAGES */
+@import './pages/_auth.css';
+@import './pages/_invoice.css';
+@import './pages/_pricing.css';
+@import './pages/_print.css';
+@import './pages/_profile.css';
+
+/* 6. LOAD TAILWIND */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

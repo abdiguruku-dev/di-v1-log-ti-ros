@@ -1,0 +1,40 @@
+/* ==============================================
+   FILE: _reset.css
+   FUNGSI: Membersihkan/Menetralkan gaya browser.
+   ATURAN: JANGAN masukkan warna background disini!
+   ============================================== */
+
+/* 1. Pastikan Scroll Halus (Smooth Scrolling) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. Hapus Outline Biru saat elemen diklik (Biar rapi) */
+:focus {
+    outline: none;
+}
+
+/* 3. Pastikan Gambar tidak loncat keluar container */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 4. Reset Input (Opsional, biar seragam antar browser) */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* -------------------------------------------------------
+   ⚠️ ZONA TERLARANG (JANGAN DITULIS DI SINI)
+   -------------------------------------------------------
+   body { 
+       background-color: ...;  <-- INI JANGAN ADA! 
+       color: ...;             <-- INI JUGA JANGAN!
+   }
+   
+   Alasan: Biarkan background diatur oleh Tailwind di HTML
+   atau di _main.css agar transparan/glass effect jalan.
+   -------------------------------------------------------
+*/

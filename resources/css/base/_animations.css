@@ -1,0 +1,68 @@
+/* =========================================
+   FILE: _animations.css
+   FUNGSI: Definisi Gerakan & Class Pemicu
+   ========================================= */
+
+/* --- BAGIAN 1: KEYFRAMES (RUMUS GERAKAN) --- */
+
+/* 1. Gerakan Background Body (Global) */
+@keyframes gradientBG { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+
+/* 2. Gerakan Sidebar Aurora */
+@keyframes sidebarAurora { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+
+/* 3. Gerakan Item Menu Aktif (Glow) */
+@keyframes auroraItem { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
+
+/* 4. Muncul Teks Sidebar Desktop (Fade In) */
+@keyframes fadeInText { 
+    from { opacity: 0; transform: translateX(-10px); } 
+    to { opacity: 1; transform: translateX(0); } 
+}
+
+/* 5. Dropdown Slide Down */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- BAGIAN 2: UTILITY CLASSES (TOMBOL PEMICU) --- */
+/* INI YANG KURANG TADI BOS! */
+
+@layer utilities {
+    
+    /* Pemicu untuk Body Aurora (Lambat & Santai) */
+    .animate-gradient-slow {
+        animation: gradientBG 15s ease infinite;
+        background-size: 400% 400%; /* Wajib ada biar gerak */
+    }
+
+    /* Pemicu untuk Sidebar (Agak Cepat) */
+    .animate-sidebar-flow {
+        animation: sidebarAurora 8s ease infinite;
+        background-size: 200% 200%;
+    }
+
+    /* Pemicu untuk Teks Sidebar (Muncul sekali saat expand) */
+    .animate-text-appear {
+        animation: fadeInText 0.4s ease-out forwards;
+    }
+
+    /* Pemicu untuk Dropdown Menu */
+    .animate-dropdown-slide {
+        animation: slideDown 0.3s ease-out forwards;
+    }
+    
+}

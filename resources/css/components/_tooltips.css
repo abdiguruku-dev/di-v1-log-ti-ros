@@ -1,0 +1,29 @@
+/* =========================================
+   TOOLTIPS (CSS Only)
+   ========================================= */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%; left: 50%;
+    transform: translateX(-50%) translateY(-5px);
+    padding: 6px 10px;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0; visibility: hidden;
+    transition: 0.2s;
+    pointer-events: none;
+    z-index: var(--z-tooltip, 9999);
+}
+
+[data-tooltip]:hover:before {
+    opacity: 1; visibility: visible;
+    transform: translateX(-50%) translateY(-10px);
+}

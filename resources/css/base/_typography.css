@@ -1,0 +1,22 @@
+/* =========================================
+   FILE: _typography.css
+   FUNGSI: Mengatur Font & Teks Dasar
+   ========================================= */
+
+/* 1. IMPORT FONT (Pindah dari HTML kesini) */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+@layer base {
+    /* 2. SETTING GLOBAL */
+    html {
+        font-family: 'Nunito', sans-serif;
+        /* Antialiasing biar teks tajam */
+        -webkit-font-smoothing: antialiased; 
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* 3. JUDUL DEFAULT (Opsional) */
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold text-slate-800;
+    }
+}

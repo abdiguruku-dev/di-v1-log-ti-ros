@@ -1,0 +1,55 @@
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+/* Reset Button Default */
+button { cursor: pointer; border: none; font-family: inherit; }
+
+/* 1. Tombol Logout Kotak (Standalone) */
+.btn-standalone-logout {
+    width: 42px; height: 42px; 
+    border-radius: var(--border-radius-md);
+    border: 1px solid rgba(239, 68, 68, 0.2); 
+    background: var(--danger-bg); 
+    color: var(--danger);
+    display: flex; align-items: center; justify-content: center;
+    transition: all var(--trans-normal); 
+    font-size: 1.1rem;
+}
+
+.btn-standalone-logout:hover { 
+    background: var(--danger); 
+    color: #fff; 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4); 
+}
+
+/* 2. Tombol Primary (Simpan/Tambah) */
+.btn-primary {
+    padding: 10px 20px;
+    background: var(--grad-primary);
+    color: #fff;
+    border-radius: var(--border-radius-sm);
+    font-weight: 700;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: var(--trans-fast);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* 3. Badge Role (Label Administrator) */
+.badge-role {
+    background: rgba(255,255,255,0.2); 
+    color: #ffffff; 
+    font-size: 0.75rem; font-weight: 700;
+    padding: 4px 12px; 
+    border-radius: 50px; 
+    display: inline-block; 
+    border: 1px solid rgba(255,255,255,0.3); 
+    backdrop-filter: blur(4px);
+}
